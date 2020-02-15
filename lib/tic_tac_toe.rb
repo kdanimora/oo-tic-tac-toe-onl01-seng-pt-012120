@@ -27,7 +27,7 @@ def initialize.board
 end 
 
 def full?
-  board.all do {|character| 
+  board.each do |character| 
   character == "X" || character == "O"
 end 
 end 
