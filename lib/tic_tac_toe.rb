@@ -28,8 +28,11 @@ end
 
 def full?
   board.each do |character| 
-  character == "X" || character == "O"
-end 
+    if  character == "X" || character == "O"
+      true 
+    else 
+      false 
+    end 
 end 
 
 end 
