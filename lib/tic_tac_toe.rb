@@ -40,8 +40,8 @@ end
    board.count{|character| character == "X" || character == "O"}
  end 
  
- def taken?
-   position
+ def taken?(input)
+  position(input) == "X" || position == "O"
  end 
 
 
