@@ -41,7 +41,7 @@ end
  end 
  
  def taken?
-   
+   position
  end 
 
 
