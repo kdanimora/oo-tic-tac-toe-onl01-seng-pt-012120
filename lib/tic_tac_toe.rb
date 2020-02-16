@@ -52,7 +52,7 @@ end
   #position(input) == "X" || position == "O"
  end 
  
- def valid_move?
+ def valid_move?(input)
    - user input between 1-9
    - that is not taken 
  end 
