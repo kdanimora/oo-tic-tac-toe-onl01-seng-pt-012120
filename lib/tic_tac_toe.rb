@@ -36,7 +36,8 @@ def full?
 end 
 
 
- def 
+ def turn_count 
+   board.count{|character| character == "X" || character == "O"}
  end 
 
 
