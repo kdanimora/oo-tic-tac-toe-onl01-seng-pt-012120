@@ -1,10 +1,9 @@
-class TicTacToe
-  
-def initialize
-  @board = Array.new(9, " ")
+class TicTacToe 
+
+  def initialize
+    @board = Array.new(9, ' ')
   end 
-  
- 
+
   WIN_COMBINATIONS = [
     [0, 1, 2],  
     [3, 4, 5],  
@@ -15,7 +14,6 @@ def initialize
     [6, 4, 2],
     [0, 4, 8]
   ]
-  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -23,40 +21,35 @@ def initialize
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
+  def input_to_index(input)
+      user_input = input.to_i - 1 
+  end
   
-  def position(input)
-    board(input.to_i-1)
-end 
-
-def full?
-  @board.all? do |character| 
-    if  character == "X" || character == "O"
-      true 
-    else 
-      false 
-    end 
-end 
-
-
- def turn_count 
-   board.count{|character| character == "X" || character == "O"}
- end 
- 
- def position_taken?(index)
-   if @board[index] == ' '
+  def move(i, token="X") 
+    @board[i] = token
+  end 
+  
+  def position_taken?(index)
+    if @board[index] == ' '
       return false 
     else 
       return true 
     end
   end 
-  #position(input) == "X" || position == "O"
- end 
- 
- def valid_move?(input)
-   input.to_i.between?(1, 9)
   
-   #- that is not taken 
- end 
+  def valid_move?(position)
+    if !position_taken?(position) && position.between?(0,8)
+      return true
+    else 
+      return false 
+    end 
+  end 
+  
+  def turn_count 
+    counter = @board.reject { |e| e.empty? || e == ' ' }
+    p counter.length
+  end 
  
    def current_player 
     if turn_count % 2 == 0  
