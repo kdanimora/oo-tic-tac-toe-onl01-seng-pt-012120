@@ -14,6 +14,7 @@ def initialize.board
     [6, 4, 2],
     [0, 4, 8]
   ]
+  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -44,4 +45,5 @@ end
   position(input) == "X" || position == "O"
  end 
  
+ end 
  end
