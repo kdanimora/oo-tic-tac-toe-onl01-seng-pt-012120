@@ -25,7 +25,7 @@ def initialize
   end
   
   def position(input)
-    board(input.to_i-1)
+    @board(input.to_i-1)
 end 
 
 def full?
@@ -39,7 +39,7 @@ end
 
 
  def turn_count 
-   board.count{|character| character == "X" || character == "O"}
+   @board.count{|character| character == "X" || character == "O"}
  end 
  
  def position_taken?(index)
@@ -51,6 +51,10 @@ end
   end 
   #position(input) == "X" || position == "O"
  end 
+ 
+ 
+ 
+ 
  
  end 
  
