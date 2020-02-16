@@ -29,7 +29,7 @@ def initialize
 end 
 
 def full?
-  board.all? do |character| 
+  @board.all? do |character| 
     if  character == "X" || character == "O"
       true 
     else 
@@ -42,8 +42,14 @@ end
    board.count{|character| character == "X" || character == "O"}
  end 
  
- def position_taken?(input)
-  position(input) == "X" || position == "O"
+ def position_taken?(index)
+   if @board[index] == ' '
+      return false 
+    else 
+      return true 
+    end
+  end 
+  #position(input) == "X" || position == "O"
  end 
  
  end 
