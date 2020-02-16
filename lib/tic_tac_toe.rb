@@ -53,6 +53,7 @@ end
  end 
  
  def valid_move?(input)
+   input.to_i.
    - user input between 1-9
    - that is not taken 
  end 
